@@ -1,30 +1,33 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('bladephp.homee', ['nama'=>'Maria Fadilla']);
+})->name('hm');
 
-//Products
-Route::prefix('products')->group(function(){
-    Route::get('/marbel-edu-games', [ProductsController::class, 'edugames']);
-    Route::get('/marbel-and-friends-kids-games', [ProductsController::class, 'kidsgames']);
-    Route::get('/riri-story-books', [ProductsController::class, 'riristory']);
-    Route::get('/kolak-kids-songs', [ProductsController::class, 'kolakkids']);
+Route::prefix('category')->group(function(){
+    Route::get('/marbel-edu-games', [ProductController::class, 'edugames'])->name('meg');
+    Route::get('/marbel-and-friends-kids-games', [ProductController::class, 'kidsgames'])->name('mkg');
+    Route::get('/riri-story-books', [ProductController::class, 'riristory'])->name('rs');
+    Route::get('/kolak-kids-songs', [ProductController::class, 'kolakkids'])->name('kk');
 });
+
+Route::get('/news/{namaberita?}', [NewsController::class, 'news'])->name('nw');
+
+Route::prefix('program')->group(function(){
+    Route::get('/karir', [ProgramController::class, 'karir'])->name('kr');
+    Route::get('/magang', [ProgramController::class, 'magang'])->name('mg');
+    Route::get('/kunjungan-industri', [ProgramController::class, 'industri'])->name('ki');
+});
+
+Route::get('/home/about-us', [AboutController::class, 'about'])->name('abt');
+
+Route::resource('contact-us',  ContactController::class)->only(['index']);

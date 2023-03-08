@@ -1,12 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function about(){
-        return view ('contact-us');
+    public function index()
+    {
+        return view('bladephp.contact-us');
     }
 }

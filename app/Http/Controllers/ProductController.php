@@ -1,21 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function marbel_edu(){
-        return view ('product');
+    public function edugames(){
+        return view('bladephp.product', ['namaproduk'=>'Marbel - Educational Games']);
     }
-    public function marbel_friends(){
-        return view ('product1');
+    public function kidsgames(){
+        return view('bladephp.product', ['namaproduk'=>'Marbel & Friends - Kids games']);
     }
-    public function riri_story(){
-        return view ('product2');
+    public function riristory(){
+        return view('bladephp.product', ['namaproduk'=>'Riri - Story Books & Animations']);
     }
-    public function kolak_songs(){
-        return view ('product3');
+    public function kolakkids(){
+        return view('bladephp.product', ['namaproduk'=>'Kolak - Kids Songs']);
     }
 }

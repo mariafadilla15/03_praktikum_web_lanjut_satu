@@ -1,12 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
-class AboutusController extends Controller
+class AboutController extends Controller
 {
     public function about(){
-        return view ('about-us');
+        return view('bladephp.about-us');
     }
 }
