@@ -10,8 +10,8 @@ use App\Http\Controllers\ContactController;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('bladephp.homee', ['nama'=>'Maria Fadilla']);
-})->name('hm');
+    return view('bladephp.homee', ['nama'=>'Maria Fadilla'], ['nim'=>'2141720063']);
+})->name('home');
 
 Route::prefix('category')->group(function(){
     Route::get('/marbel-edu-games', [ProductController::class, 'edugames'])->name('meg');
@@ -23,11 +23,11 @@ Route::prefix('category')->group(function(){
 Route::get('/news/{namaberita?}', [NewsController::class, 'news'])->name('nw');
 
 Route::prefix('program')->group(function(){
-    Route::get('/karir', [ProgramController::class, 'karir'])->name('kr');
-    Route::get('/magang', [ProgramController::class, 'magang'])->name('mg');
-    Route::get('/kunjungan-industri', [ProgramController::class, 'industri'])->name('ki');
+    Route::get('/karir', [ProgramController::class, 'karir'])->name('karir');
+    Route::get('/magang', [ProgramController::class, 'magang'])->name('magang');
+    Route::get('/kunjungan-industri', [ProgramController::class, 'industri'])->name('kunjungan');
 });
 
-Route::get('/home/about-us', [AboutController::class, 'about'])->name('abt');
+Route::get('about-us', [AboutController::class, 'about'])->name('about');
 
-Route::resource('contact-us',  ContactController::class)->only(['index']);
+Route::resource('contact-us', ContactController::class)->only(['show']);

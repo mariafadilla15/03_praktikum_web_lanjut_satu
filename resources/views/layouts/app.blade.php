@@ -20,7 +20,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-secondary" data-bs-theme="light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{{Route('hm')}}">Educa Studio | </a>
+              <a class="navbar-brand" href="{{Route('home')}}">Educa Studio | </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,7 +28,7 @@
                 <ul class="navbar-nav">
                   <li class="nav-item">
 
-                    {{-- <a class="nav-link active" aria-current="page" href="{{Route('hm')}}">Home</a> --}}
+                    {{-- <a class="nav-link active" aria-current="page" href="{{Route('home')}}">Home</a> --}}
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,18 +49,17 @@
                       Program
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{Route('kr')}}">Karir</a></li>
-                      <li><a class="dropdown-item" href="{{Route('mg')}}">Magang</a></li>
-                      <li><a class="dropdown-item" href="{{Route('ki')}}">Kunjungan Industri</a></li>
+                      <li><a class="dropdown-item" href="{{Route('karir')}}">Karir</a></li>
+                      <li><a class="dropdown-item" href="{{Route('magang')}}">Magang</a></li>
+                      <li><a class="dropdown-item" href="{{Route('kunjungan')}}">Kunjungan Industri</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{Route('abt')}}">About Us</a>
+                    <a class="nav-link" href="{{Route('about')}}">About Us</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{}">Contact Us</a>
-                  </li>
-                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us/show">Contact Us</a>
+                    </li>
                 </ul>
             </div>
             </div>
